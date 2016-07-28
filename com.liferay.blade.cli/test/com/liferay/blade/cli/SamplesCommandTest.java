@@ -97,9 +97,9 @@ public class SamplesCommandTest {
 
 		File buildFile = IO.getFile(projectDir, "build.gradle");
 
-		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/gradle-wrapper.jar");
+		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/wrapper/gradle-wrapper.jar");
 
-		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/gradle-wrapper.properties");
+		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/wrapper/gradle-wrapper.properties");
 
 		File gradleWrapperShell = IO.getFile(projectDir, "gradlew");
 
@@ -131,9 +131,9 @@ public class SamplesCommandTest {
 
 		File buildFile = IO.getFile(projectDir, "build.gradle");
 
-		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/gradle-wrapper.jar");
+		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/wrapper/gradle-wrapper.jar");
 
-		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/gradle-wrapper.properties");
+		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/wrapper/gradle-wrapper.properties");
 
 		File gradleWrapperShell = IO.getFile(projectDir, "gradlew");
 
