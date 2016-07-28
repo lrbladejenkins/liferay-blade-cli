@@ -58,12 +58,12 @@ public class SamplesCommandTest {
 	@Test
 	public void testGetSample() throws Exception {
 		String[] args = {
-			"samples", "-d", testDir.getPath() + "/generated/test", "blade.friendlyurl"
+			"samples", "-d", testDir.getPath() + "/test", "blade.friendlyurl"
 		};
 
 		new bladenofail().run(args);
 
-		File projectDir = new File(testDir, "/generated/test/blade.friendlyurl");
+		File projectDir = new File(testDir, "test/blade.friendlyurl");
 
 		assertTrue(projectDir.exists());
 
@@ -80,19 +80,19 @@ public class SamplesCommandTest {
 
 	@Test
 	public void testGetSampleWithGradleWrapper() throws Exception {
-		String[] args = {"samples", "-d", testDir.getPath() + "/generated/test", "blade.authenticator.shiro"};
+		String[] args = {"samples", "-d", testDir.getPath() + "/test", "blade.authenticator.shiro"};
 
 		new bladenofail().run(args);
 
-		File projectDir = new File(testDir, "/generated/test/blade.authenticator.shiro");
+		File projectDir = new File(testDir, "test/blade.authenticator.shiro");
 
 		assertTrue(projectDir.exists());
 
 		File buildFile = IO.getFile(projectDir, "build.gradle");
 
-		File gradleWrapperJar = IO.getFile(new File(projectDir + "/.gradle"), "gradle-wrapper.jar");
+		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/gradle-wrapper.jar");
 
-		File gradleWrapperProperties = IO.getFile(new File(projectDir + "/.gradle"), "gradle-wrapper.properties");
+		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/gradle-wrapper.properties");
 
 		File gradleWrapperShell = IO.getFile(projectDir, "gradlew");
 
@@ -110,23 +110,23 @@ public class SamplesCommandTest {
 
 	@Test
 	public void testGetSampleWithGradleWrapperExisting() throws Exception {
-		String[] initArgs = {"-b", testDir.getPath() + "/generated/test/workspace", "init"};
+		String[] initArgs = {"-b", testDir.getPath() + "/test/workspace", "init"};
 
 		new bladenofail().run(initArgs);
 
-		String[] samplesArgs = {"samples", "-d", "/generated/test/workspace/modules", "blade.authfailure"};
+		String[] samplesArgs = {"samples", "-d", "/test/workspace/modules", "blade.authfailure"};
 
 		new bladenofail().run(samplesArgs);
 
-		File projectDir = new File(testDir, "/generated/test/workspace/modules/blade.authfailure");
+		File projectDir = new File(testDir, "test/workspace/modules/blade.authfailure");
 
 		assertTrue(projectDir.exists());
 
 		File buildFile = IO.getFile(projectDir, "build.gradle");
 
-		File gradleWrapperJar = IO.getFile(new File(projectDir + "/.gradle"), "gradle-wrapper.jar");
+		File gradleWrapperJar = IO.getFile(projectDir,  "gradle/gradle-wrapper.jar");
 
-		File gradleWrapperProperties = IO.getFile(new File(projectDir + "/.gradle"), "gradle-wrapper.properties");
+		File gradleWrapperProperties = IO.getFile(projectDir, "gradle/gradle-wrapper.properties");
 
 		File gradleWrapperShell = IO.getFile(projectDir, "gradlew");
 
@@ -144,11 +144,11 @@ public class SamplesCommandTest {
 
 	@Test
 	public void testGetSampleWithDependencies() throws Exception {
-		String[] args = {"samples", "-d", testDir.getPath() + "/generated/test", "blade.rest"};
+		String[] args = {"samples", "-d", testDir.getPath() + "/test", "blade.rest"};
 
 		new bladenofail().run(args);
 
-		File projectDir = new File(testDir, "/generated/test/blade.rest");
+		File projectDir = new File(testDir, "test/blade.rest");
 
 		assertTrue(projectDir.exists());
 
