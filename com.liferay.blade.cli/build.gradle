@@ -21,6 +21,8 @@ clean.doFirst {
 	delete "${projectDir}/deps.zip", "${projectDir}/wrapper.zip"
 }
 
+test.dependsOn createDepsZip, createWrapperZip
+
 jar {
 	from createDepsZip, createWrapperZip
 }
