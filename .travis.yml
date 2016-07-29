@@ -4,3 +4,7 @@ jdk:
 
 install: ./gradlew --version
 script: ./gradlew build
+
+env:
+  global:
+    - GRADLE_OPTS="-Xms128m"
